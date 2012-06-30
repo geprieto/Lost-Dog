@@ -12,6 +12,10 @@
 		0E18EA2E158C6F4C00EDB3FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E18EA2D158C6F4C00EDB3FC /* MobileCoreServices.framework */; };
 		0E18EA34158C87E000EDB3FC /* Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E18EA33158C87DF00EDB3FC /* Found.m */; };
 		0E18EA37158D767D00EDB3FC /* Lost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E18EA36158D767D00EDB3FC /* Lost.m */; };
+		0E1EA19D159EE17600E8CC0E /* FBFeedPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EA19A159EE17600E8CC0E /* FBFeedPost.m */; };
+		0E1EA19E159EE17600E8CC0E /* FBRequestWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EA19C159EE17600E8CC0E /* FBRequestWrapper.m */; };
+		0E1EA1B3159EE49800E8CC0E /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */; };
+		0E1EA1B4159EE49800E8CC0E /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1EA1AC159EE49800E8CC0E /* libfacebook_ios_sdk.a */; };
 		0E42B696158832C30077C0D7 /* found_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B692158832C30077C0D7 /* found_icon.png */; };
 		0E42B697158832C30077C0D7 /* found_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B693158832C30077C0D7 /* found_icon@2x.png */; };
 		0E42B698158832C30077C0D7 /* lost_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B694158832C30077C0D7 /* lost_icon.png */; };
@@ -25,8 +29,6 @@
 		0E854A3A1545358800A30EFC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A391545358800A30EFC /* SenTestingKit.framework */; };
 		0E854A3B1545358800A30EFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A1B1545358700A30EFC /* UIKit.framework */; };
 		0E854A3C1545358800A30EFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A1D1545358700A30EFC /* Foundation.framework */; };
-		0E854A441545358800A30EFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E854A421545358800A30EFC /* InfoPlist.strings */; };
-		0E854A471545358800A30EFC /* DogFoundv2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A461545358800A30EFC /* DogFoundv2Tests.m */; };
 		0E854A511545359D00A30EFC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A501545359D00A30EFC /* CoreData.framework */; };
 		0E854A53154535ED00A30EFC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E854A52154535ED00A30EFC /* MainStoryboard.storyboard */; };
 		0E854A6515453F6D00A30EFC /* LostTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A6415453F6D00A30EFC /* LostTVC.m */; };
@@ -57,10 +59,29 @@
 		0E12D9D5156A37E6000E091F /* logo_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_57.png; sourceTree = "<group>"; };
 		0E12D9D6156A37E6000E091F /* logo_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_114.png; sourceTree = "<group>"; };
 		0E18EA2D158C6F4C00EDB3FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		0E18EA32158C87DF00EDB3FC /* Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Found.h; sourceTree = "<group>"; };
-		0E18EA33158C87DF00EDB3FC /* Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Found.m; sourceTree = "<group>"; };
-		0E18EA35158D767C00EDB3FC /* Lost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lost.h; sourceTree = "<group>"; };
-		0E18EA36158D767D00EDB3FC /* Lost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lost.m; sourceTree = "<group>"; };
+		0E18EA32158C87DF00EDB3FC /* Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Found.h; path = DogFoundv2/Found.h; sourceTree = "<group>"; };
+		0E18EA33158C87DF00EDB3FC /* Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Found.m; path = DogFoundv2/Found.m; sourceTree = "<group>"; };
+		0E18EA35158D767C00EDB3FC /* Lost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lost.h; path = DogFoundv2/Lost.h; sourceTree = "<group>"; };
+		0E18EA36158D767D00EDB3FC /* Lost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lost.m; path = DogFoundv2/Lost.m; sourceTree = "<group>"; };
+		0E1EA199159EE17600E8CC0E /* FBFeedPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedPost.h; sourceTree = "<group>"; };
+		0E1EA19A159EE17600E8CC0E /* FBFeedPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFeedPost.m; sourceTree = "<group>"; };
+		0E1EA19B159EE17600E8CC0E /* FBRequestWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequestWrapper.h; sourceTree = "<group>"; };
+		0E1EA19C159EE17600E8CC0E /* FBRequestWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequestWrapper.m; sourceTree = "<group>"; };
+		0E1EA1A4159EE49800E8CC0E /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		0E1EA1A5159EE49800E8CC0E /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		0E1EA1A7159EE49800E8CC0E /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		0E1EA1A8159EE49800E8CC0E /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		0E1EA1A9159EE49800E8CC0E /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		0E1EA1AA159EE49800E8CC0E /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		0E1EA1AB159EE49800E8CC0E /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		0E1EA1AC159EE49800E8CC0E /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfacebook_ios_sdk.a; sourceTree = "<group>"; };
+		0E1EA1AD159EE49800E8CC0E /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		0E1EA1AE159EE49800E8CC0E /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		0E1EA1AF159EE49800E8CC0E /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		0E1EA1B0159EE49800E8CC0E /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		0E1EA1B1159EE49800E8CC0E /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		0E1EA1B2159EE49800E8CC0E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		0E42B692158832C30077C0D7 /* found_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = found_icon.png; sourceTree = "<group>"; };
 		0E42B693158832C30077C0D7 /* found_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "found_icon@2x.png"; sourceTree = "<group>"; };
 		0E42B694158832C30077C0D7 /* lost_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lost_icon.png; sourceTree = "<group>"; };
@@ -73,22 +94,18 @@
 		0E854A251545358700A30EFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0E854A271545358700A30EFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E854A291545358700A30EFC /* Lost Dog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lost Dog-Prefix.pch"; sourceTree = "<group>"; };
-		0E854A2A1545358700A30EFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0E854A2B1545358700A30EFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		0E854A2A1545358700A30EFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DogFoundv2/AppDelegate.h; sourceTree = "<group>"; };
+		0E854A2B1545358700A30EFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DogFoundv2/AppDelegate.m; sourceTree = "<group>"; };
 		0E854A381545358800A30EFC /* Lost DogTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lost DogTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E854A391545358800A30EFC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		0E854A411545358800A30EFC /* Lost DogTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Lost DogTests-Info.plist"; sourceTree = "<group>"; };
-		0E854A431545358800A30EFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0E854A451545358800A30EFC /* DogFoundv2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DogFoundv2Tests.h; sourceTree = "<group>"; };
-		0E854A461545358800A30EFC /* DogFoundv2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DogFoundv2Tests.m; sourceTree = "<group>"; };
 		0E854A501545359D00A30EFC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0E854A52154535ED00A30EFC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0E854A52154535ED00A30EFC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		0E854A6315453F6D00A30EFC /* LostTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostTVC.h; sourceTree = "<group>"; };
 		0E854A6415453F6D00A30EFC /* LostTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostTVC.m; sourceTree = "<group>"; };
 		0E854A6615453F7F00A30EFC /* AddLostTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLostTVC.h; sourceTree = "<group>"; };
 		0E854A6715453F7F00A30EFC /* AddLostTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLostTVC.m; sourceTree = "<group>"; };
-		0E854A6D154543C300A30EFC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
-		0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		0E854A6D154543C300A30EFC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = DogFoundv2/CoreDataTableViewController.h; sourceTree = "<group>"; };
+		0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = DogFoundv2/CoreDataTableViewController.m; sourceTree = "<group>"; };
 		0E854A711545446B00A30EFC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		0EB31745156A483F007D3A3F /* intro_screen_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro_screen_320.png; sourceTree = "<group>"; };
 		0EB31746156A483F007D3A3F /* intro_screen_640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro_screen_640.png; sourceTree = "<group>"; };
@@ -114,6 +131,7 @@
 				0E854A1C1545358700A30EFC /* UIKit.framework in Frameworks */,
 				0E854A1E1545358700A30EFC /* Foundation.framework in Frameworks */,
 				0E854A201545358700A30EFC /* CoreGraphics.framework in Frameworks */,
+				0E1EA1B4159EE49800E8CC0E /* libfacebook_ios_sdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +148,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E854A0C1545358700A30EFC = {
+		0E1EA197159EE13E00E8CC0E /* images */ = {
 			isa = PBXGroup;
 			children = (
 				0E42B692158832C30077C0D7 /* found_icon.png */,
@@ -143,10 +161,79 @@
 				0EB31746156A483F007D3A3F /* intro_screen_640.png */,
 				0E12D9D5156A37E6000E091F /* logo_57.png */,
 				0E12D9D6156A37E6000E091F /* logo_114.png */,
-				0E854A211545358700A30EFC /* DogFoundv2 */,
-				0E854A3F1545358800A30EFC /* DogFoundv2Tests */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		0E1EA19F159EE18E00E8CC0E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				0E1EA199159EE17600E8CC0E /* FBFeedPost.h */,
+				0E1EA19A159EE17600E8CC0E /* FBFeedPost.m */,
+				0E1EA19B159EE17600E8CC0E /* FBRequestWrapper.h */,
+				0E1EA19C159EE17600E8CC0E /* FBRequestWrapper.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		0E1EA1A0159EE1F300E8CC0E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0E854A6D154543C300A30EFC /* CoreDataTableViewController.h */,
+				0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */,
+				0E18EA32158C87DF00EDB3FC /* Found.h */,
+				0E18EA33158C87DF00EDB3FC /* Found.m */,
+				0E18EA35158D767C00EDB3FC /* Lost.h */,
+				0E18EA36158D767D00EDB3FC /* Lost.m */,
+				0E854A701545446B00A30EFC /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		0E1EA1A2159EE27F00E8CC0E /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5E2591568D49C00A04C8A /* Found */,
+				0EF5E2581568D46E00A04C8A /* Lost */,
+			);
+			name = MVC;
+			sourceTree = "<group>";
+		};
+		0E1EA1A3159EE49800E8CC0E /* facebook-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				0E1EA1A4159EE49800E8CC0E /* Facebook.h */,
+				0E1EA1A5159EE49800E8CC0E /* FBConnect.h */,
+				0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */,
+				0E1EA1A7159EE49800E8CC0E /* FBDialog.h */,
+				0E1EA1A8159EE49800E8CC0E /* FBFrictionlessRequestSettings.h */,
+				0E1EA1A9159EE49800E8CC0E /* FBLoginDialog.h */,
+				0E1EA1AA159EE49800E8CC0E /* FBRequest.h */,
+				0E1EA1AB159EE49800E8CC0E /* JSON.h */,
+				0E1EA1AC159EE49800E8CC0E /* libfacebook_ios_sdk.a */,
+				0E1EA1AD159EE49800E8CC0E /* NSObject+SBJSON.h */,
+				0E1EA1AE159EE49800E8CC0E /* NSString+SBJSON.h */,
+				0E1EA1AF159EE49800E8CC0E /* SBJSON.h */,
+				0E1EA1B0159EE49800E8CC0E /* SBJsonBase.h */,
+				0E1EA1B1159EE49800E8CC0E /* SBJsonParser.h */,
+				0E1EA1B2159EE49800E8CC0E /* SBJsonWriter.h */,
+			);
+			path = "facebook-ios-sdk";
+			sourceTree = "<group>";
+		};
+		0E854A0C1545358700A30EFC = {
+			isa = PBXGroup;
+			children = (
+				0E854A2A1545358700A30EFC /* AppDelegate.h */,
+				0E854A2B1545358700A30EFC /* AppDelegate.m */,
+				0E854A52154535ED00A30EFC /* MainStoryboard.storyboard */,
+				0E1EA1A2159EE27F00E8CC0E /* MVC */,
+				0E1EA1A0159EE1F300E8CC0E /* CoreData */,
+				0E854A221545358700A30EFC /* Supporting Files */,
+				0E1EA197159EE13E00E8CC0E /* images */,
 				0E854A1A1545358700A30EFC /* Frameworks */,
 				0E854A181545358700A30EFC /* Products */,
+				0E1EA19F159EE18E00E8CC0E /* Classes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +249,7 @@
 		0E854A1A1545358700A30EFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E1EA1A3159EE49800E8CC0E /* facebook-ios-sdk */,
 				0E18EA2D158C6F4C00EDB3FC /* MobileCoreServices.framework */,
 				0E854A501545359D00A30EFC /* CoreData.framework */,
 				0E854A1B1545358700A30EFC /* UIKit.framework */,
@@ -170,22 +258,6 @@
 				0E854A391545358800A30EFC /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0E854A211545358700A30EFC /* DogFoundv2 */ = {
-			isa = PBXGroup;
-			children = (
-				0E854A6D154543C300A30EFC /* CoreDataTableViewController.h */,
-				0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */,
-				0E854A2A1545358700A30EFC /* AppDelegate.h */,
-				0E854A2B1545358700A30EFC /* AppDelegate.m */,
-				0E854A52154535ED00A30EFC /* MainStoryboard.storyboard */,
-				0EF5E2591568D49C00A04C8A /* Found */,
-				0EF5E2581568D46E00A04C8A /* Lost */,
-				0E854A701545446B00A30EFC /* Model.xcdatamodeld */,
-				0E854A221545358700A30EFC /* Supporting Files */,
-			);
-			path = DogFoundv2;
 			sourceTree = "<group>";
 		};
 		0E854A221545358700A30EFC /* Supporting Files */ = {
@@ -197,32 +269,12 @@
 				0E854A291545358700A30EFC /* Lost Dog-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0E854A3F1545358800A30EFC /* DogFoundv2Tests */ = {
-			isa = PBXGroup;
-			children = (
-				0E854A451545358800A30EFC /* DogFoundv2Tests.h */,
-				0E854A461545358800A30EFC /* DogFoundv2Tests.m */,
-				0E854A401545358800A30EFC /* Supporting Files */,
-			);
-			path = DogFoundv2Tests;
-			sourceTree = "<group>";
-		};
-		0E854A401545358800A30EFC /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E854A411545358800A30EFC /* Lost DogTests-Info.plist */,
-				0E854A421545358800A30EFC /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
+			path = DogFoundv2;
 			sourceTree = "<group>";
 		};
 		0EF5E2581568D46E00A04C8A /* Lost */ = {
 			isa = PBXGroup;
 			children = (
-				0E18EA35158D767C00EDB3FC /* Lost.h */,
-				0E18EA36158D767D00EDB3FC /* Lost.m */,
 				0EF5E25415679FF300A04C8A /* LostDetailTVC.h */,
 				0EF5E25515679FF300A04C8A /* LostDetailTVC.m */,
 				0E854A6315453F6D00A30EFC /* LostTVC.h */,
@@ -231,13 +283,12 @@
 				0E854A6715453F7F00A30EFC /* AddLostTVC.m */,
 			);
 			name = Lost;
+			path = DogFoundv2;
 			sourceTree = "<group>";
 		};
 		0EF5E2591568D49C00A04C8A /* Found */ = {
 			isa = PBXGroup;
 			children = (
-				0E18EA32158C87DF00EDB3FC /* Found.h */,
-				0E18EA33158C87DF00EDB3FC /* Found.m */,
 				0EF5E25A1568D4E000A04C8A /* FoundTVC.h */,
 				0EF5E25B1568D4E000A04C8A /* FoundTVC.m */,
 				0EF5E25D1568D4FE00A04C8A /* AddFoundTVC.h */,
@@ -246,6 +297,7 @@
 				0EF5E2611568D51B00A04C8A /* FoundDetailTVC.m */,
 			);
 			name = Found;
+			path = DogFoundv2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +383,7 @@
 				0E42B697158832C30077C0D7 /* found_icon@2x.png in Resources */,
 				0E42B698158832C30077C0D7 /* lost_icon.png in Resources */,
 				0E42B699158832C30077C0D7 /* lost_icon@2x.png in Resources */,
+				0E1EA1B3159EE49800E8CC0E /* FBDialog.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +391,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E854A441545358800A30EFC /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +429,8 @@
 				0EF5E2621568D51B00A04C8A /* FoundDetailTVC.m in Sources */,
 				0E18EA34158C87E000EDB3FC /* Found.m in Sources */,
 				0E18EA37158D767D00EDB3FC /* Lost.m in Sources */,
+				0E1EA19D159EE17600E8CC0E /* FBFeedPost.m in Sources */,
+				0E1EA19E159EE17600E8CC0E /* FBRequestWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E854A471545358800A30EFC /* DogFoundv2Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,14 +456,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				0E854A251545358700A30EFC /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0E854A421545358800A30EFC /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E854A431545358800A30EFC /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -469,6 +514,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DogFoundv2/Lost Dog-Prefix.pch";
 				INFOPLIST_FILE = "DogFoundv2/Lost Dog-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/facebook-ios-sdk\"",
+				);
 				PRODUCT_NAME = "Lost Dog";
 				WRAPPER_EXTENSION = app;
 			};
@@ -480,6 +529,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DogFoundv2/Lost Dog-Prefix.pch";
 				INFOPLIST_FILE = "DogFoundv2/Lost Dog-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/facebook-ios-sdk\"",
+				);
 				PRODUCT_NAME = "Lost Dog";
 				WRAPPER_EXTENSION = app;
 			};
@@ -558,7 +611,8 @@
 				0E854A711545446B00A30EFC /* Model.xcdatamodel */,
 			);
 			currentVersion = 0E854A711545446B00A30EFC /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
+			name = Model.xcdatamodeld;
+			path = DogFoundv2/Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
