@@ -8,14 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Lost.h"
-#import "FBFeedPost.h"
 
 @class LostDetailTVC;
 @protocol LostDetailTVCDelegate
 - (void)theSaveButtonOnTheLostDetailTVCWasTapped:(LostDetailTVC *)controller;
 @end
 
-@interface LostDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, FBFeedPostDelegate>
+@interface LostDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     UIImageView *_imageView;
     NSString *_lostImageFileName;

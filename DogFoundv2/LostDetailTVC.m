@@ -141,12 +141,6 @@
     
     [self.managedObjectContext save:nil];  // write to database
     
-    //UIImage *postImage = [UIImage imageWithContentsOfFile:self.lostImageFileName];
-    NSLog(@"Starting FB integration...");
-    FBFeedPost *post = [[FBFeedPost alloc] initWithPhoto:self.imageView.image name:lostInfoTextView.text];
-    NSLog(@"Publishing...");
-	[post publishPostWithDelegate:self];
-    
     [self.delegate theSaveButtonOnTheLostDetailTVCWasTapped:self];
 }
 

@@ -25,13 +25,13 @@ static FBRequestWrapper *defaultWrapper = nil;
 	isLoggedIn = _loggedIn;
 	
 	if (isLoggedIn) {
-		[[NSUserDefaults standardUserDefaults] setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
-		[[NSUserDefaults standardUserDefaults] setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+		[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"access_token"];
+		[[NSUserDefaults standardUserDefaults] setObject:facebook.expirationDate forKey:@"exp_date"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
 	else {
-		[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"FBAccessTokenKey"];
-		[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"FBExpirationDateKey"];
+		[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"access_token"];
+		[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"exp_date"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 	}
 }
@@ -39,35 +39,50 @@ static FBRequestWrapper *defaultWrapper = nil;
 - (void) FBSessionBegin:(id<FBSessionDelegate>) _delegate {
 	
 	if (facebook == nil) {
-		facebook = [[Facebook alloc] initWithAppId:FB_APP_ID andDelegate:_delegate];
-        facebook.sessionDelegate = _delegate;
-        NSLog(@"fb initiated");
-        NSLog(FB_API_KEY);
+		facebook = [[Facebook alloc] init];
 		
-		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        NSLog(@"Uder defaults:");
-        NSLog([defaults objectForKey:@"FBAccessTokenKey"]);
-        if ([defaults objectForKey:@"FBAccessTokenKey"]
-            && [defaults objectForKey:@"FBExpirationDateKey"]) {
-            facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
-            facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
-            isLoggedIn = YES;
-            NSLog(@"logged in!");
-        }
+		NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"access_token"];
+		NSDate *exp = [[NSUserDefaults standardUserDefaults] objectForKey:@"exp_date"];
 		
+		if (token != nil && exp != nil && [token length] > 2) {
+			isLoggedIn = YES;
+			facebook.accessToken = token;
+            facebook.expirationDate = [NSDate distantFuture];
+		} 
+		
+		
+		[facebook retain];
 	}
 	
 	NSArray * permissions = [NSArray arrayWithObjects:
 							 @"publish_stream",
 							 nil];
 	
-	if (![facebook isSessionValid]) {
-        NSLog(@"permissions are not valid, authorizing...");
-        [facebook authorize:permissions];
-    }
+	//if no session is available login
+	[facebook authorize:FB_APP_ID permissions:permissions delegate:_delegate];	
 }
 
+- (void) FBLogout {
+	[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"access_token"];
+	[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"exp_date"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	[facebook logout:self];
+}
 
+// Make simple requests
+- (void) getFBRequestWithGraphPath:(NSString*) _path andDelegate:(id) _delegate {
+	if (_path != nil) {
+		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+		
+		if (_delegate == nil)
+			_delegate = self;
+		
+		[facebook requestWithGraphPath:_path andDelegate:_delegate];
+	}
+}
+
+// Used for publishing
 - (void) sendFBRequestWithGraphPath:(NSString*) _path params:(NSMutableDictionary*) _params andDelegate:(id) _delegate {
 	
 	if (_delegate == nil)
@@ -75,35 +90,52 @@ static FBRequestWrapper *defaultWrapper = nil;
 	
 	if (_params != nil && _path != nil) {
 		
-        NSLog(@"params and path not nil");
 		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 		[facebook requestWithGraphPath:_path andParams:_params andHttpMethod:@"POST" andDelegate:_delegate];
 	}
 }
 
+#pragma mark -
+#pragma mark FacebookSessionDelegate
 
 - (void)fbDidLogin {
-    isLoggedIn = YES;
-    
-    NSLog(@"fbDidLogin running... via wrapper");
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
-    [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
-    [defaults synchronize];
-    
+	isLoggedIn = YES;
+	
+	[[NSUserDefaults standardUserDefaults] setObject:facebook.accessToken forKey:@"access_token"];
+	[[NSUserDefaults standardUserDefaults] setObject:facebook.expirationDate forKey:@"exp_date"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void) fbDidLogout {
-    // Remove saved authorization information if it exists
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"FBAccessTokenKey"]) {
-        [defaults removeObjectForKey:@"FBAccessTokenKey"];
-        [defaults removeObjectForKey:@"FBExpirationDateKey"];
-        [defaults synchronize];
-        
-        isLoggedIn = NO;
-    }
+- (void)fbDidNotLogin:(BOOL)cancelled {
+	isLoggedIn = NO;
+}
+
+- (void)fbDidLogout {
+	[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"access_token"];
+	[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"exp_date"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	isLoggedIn = NO;
+}
+
+
+#pragma mark -
+#pragma mark FBRequestDelegate
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	//NSLog(@"ResponseFailed: %@", error);
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result {
+	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+	//NSLog(@"Parsed Response: %@", result);
+}
+
+
+- (void) dealloc {
+	[facebook release], facebook = nil;
+	[super dealloc];
 }
 
 @end
