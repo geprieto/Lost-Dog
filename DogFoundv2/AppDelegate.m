@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "LostTVC.h"
 #import "FoundTVC.h"
+#import "FBConnect.h"
+
+static AppDelegate *defaultWrapper = nil;
 
 @implementation AppDelegate
 
@@ -16,6 +19,8 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+
+@synthesize isLoggedIn;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -188,4 +193,79 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+#pragma mark - FBConnect
+
++ (id) defaultManager {
+	
+	if (!defaultWrapper)
+		defaultWrapper = [[AppDelegate alloc] init];
+	
+	return defaultWrapper;
+}
+
+- (void) setIsLoggedIn:(BOOL) _loggedIn {
+	isLoggedIn = _loggedIn;
+	
+	if (isLoggedIn) {
+		[[NSUserDefaults standardUserDefaults] setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
+		[[NSUserDefaults standardUserDefaults] setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
+	else {
+		[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"FBAccessTokenKey"];
+		[[NSUserDefaults standardUserDefaults] setObject:@"" forKey:@"FBExpirationDateKey"];
+		[[NSUserDefaults standardUserDefaults] synchronize];
+	}
+}
+
+- (void) FBSessionBegin:(id<FBSessionDelegate>) _delegate {
+	
+	if (facebook == nil) {
+        facebook = [[Facebook alloc] initWithAppId:FB_APP_ID andDelegate:self];
+         facebook.sessionDelegate = self;
+        NSLog(@"fb initiated");
+        NSLog(FB_API_KEY);
+		
+		NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSLog(@"Uder defaults:");
+        NSLog([defaults objectForKey:@"FBAccessTokenKey"]);
+        if ([defaults objectForKey:@"FBAccessTokenKey"]
+            && [defaults objectForKey:@"FBExpirationDateKey"]) {
+            facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+            facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+            isLoggedIn = YES;
+            NSLog(@"logged in!");
+        }
+		
+	}
+	
+	NSArray * permissions = [NSArray arrayWithObjects:
+							 @"publish_stream",
+							 nil];
+	
+	if (![facebook isSessionValid]) {
+        NSLog(@"permissions are not valid, authorizing...");
+        [facebook authorize:permissions];
+    }
+}
+
+
+- (void) sendFBRequestWithGraphPath:(NSString*) _path params:(NSMutableDictionary*) _params andDelegate:(id) _delegate {
+	
+	if (_delegate == nil)
+		_delegate = self;
+	
+	if (_params != nil && _path != nil) {
+		
+        NSLog(@"params and path not nil");
+		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+		[facebook requestWithGraphPath:_path andParams:_params andHttpMethod:@"POST" andDelegate:_delegate];
+	}
+}
+
+    - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [facebook handleOpenURL:url]; 
+}
+    
 @end

@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Facebook.h"
+#import "FBConnect.h"
 
-#define FB_APP_ID @"197366800287642"
-#define FB_API_KEY @"3269fff9ef3b6fc13255e670ebb44c4d"
-#define FB_APP_SECRET @"d038b12cc8632865952f69722fe26393"
+#define FB_APP_ID @"145544612236231"
+#define FB_API_KEY @"145544612236231"
+#define FB_APP_SECRET @"84789d91c29abb4f3c033b7ed6359fc2"
 
 @interface FBRequestWrapper : NSObject <FBRequestDelegate, FBSessionDelegate> 
 {
@@ -20,12 +20,12 @@
 }
 
 @property (nonatomic, assign) BOOL isLoggedIn;
+@property (nonatomic, retain) Facebook *facebook;
 
 + (id) defaultManager;
 - (void) setIsLoggedIn:(BOOL) _loggedIn;
 - (void) FBSessionBegin:(id<FBSessionDelegate>) _delegate;
 - (void) FBLogout;
-- (void) getFBRequestWithGraphPath:(NSString*) _path andDelegate:(id) _delegate;
 - (void) sendFBRequestWithGraphPath:(NSString*) _path params:(NSMutableDictionary*) _params andDelegate:(id) _delegate;
 
 @end
