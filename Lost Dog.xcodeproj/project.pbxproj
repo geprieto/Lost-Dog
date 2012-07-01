@@ -12,8 +12,6 @@
 		0E18EA2E158C6F4C00EDB3FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E18EA2D158C6F4C00EDB3FC /* MobileCoreServices.framework */; };
 		0E18EA34158C87E000EDB3FC /* Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E18EA33158C87DF00EDB3FC /* Found.m */; };
 		0E18EA37158D767D00EDB3FC /* Lost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E18EA36158D767D00EDB3FC /* Lost.m */; };
-		0E1EA19D159EE17600E8CC0E /* FBFeedPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EA19A159EE17600E8CC0E /* FBFeedPost.m */; };
-		0E1EA19E159EE17600E8CC0E /* FBRequestWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E1EA19C159EE17600E8CC0E /* FBRequestWrapper.m */; };
 		0E1EA1B3159EE49800E8CC0E /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */; };
 		0E1EA1B4159EE49800E8CC0E /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1EA1AC159EE49800E8CC0E /* libfacebook_ios_sdk.a */; };
 		0E42B696158832C30077C0D7 /* found_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B692158832C30077C0D7 /* found_icon.png */; };
@@ -63,10 +61,6 @@
 		0E18EA33158C87DF00EDB3FC /* Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Found.m; path = DogFoundv2/Found.m; sourceTree = "<group>"; };
 		0E18EA35158D767C00EDB3FC /* Lost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lost.h; path = DogFoundv2/Lost.h; sourceTree = "<group>"; };
 		0E18EA36158D767D00EDB3FC /* Lost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lost.m; path = DogFoundv2/Lost.m; sourceTree = "<group>"; };
-		0E1EA199159EE17600E8CC0E /* FBFeedPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFeedPost.h; sourceTree = "<group>"; };
-		0E1EA19A159EE17600E8CC0E /* FBFeedPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBFeedPost.m; sourceTree = "<group>"; };
-		0E1EA19B159EE17600E8CC0E /* FBRequestWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequestWrapper.h; sourceTree = "<group>"; };
-		0E1EA19C159EE17600E8CC0E /* FBRequestWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBRequestWrapper.m; sourceTree = "<group>"; };
 		0E1EA1A4159EE49800E8CC0E /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
 		0E1EA1A5159EE49800E8CC0E /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
 		0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
@@ -165,17 +159,6 @@
 			name = images;
 			sourceTree = "<group>";
 		};
-		0E1EA19F159EE18E00E8CC0E /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0E1EA199159EE17600E8CC0E /* FBFeedPost.h */,
-				0E1EA19A159EE17600E8CC0E /* FBFeedPost.m */,
-				0E1EA19B159EE17600E8CC0E /* FBRequestWrapper.h */,
-				0E1EA19C159EE17600E8CC0E /* FBRequestWrapper.m */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		0E1EA1A0159EE1F300E8CC0E /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,7 +216,6 @@
 				0E1EA197159EE13E00E8CC0E /* images */,
 				0E854A1A1545358700A30EFC /* Frameworks */,
 				0E854A181545358700A30EFC /* Products */,
-				0E1EA19F159EE18E00E8CC0E /* Classes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -429,8 +411,6 @@
 				0EF5E2621568D51B00A04C8A /* FoundDetailTVC.m in Sources */,
 				0E18EA34158C87E000EDB3FC /* Found.m in Sources */,
 				0E18EA37158D767D00EDB3FC /* Lost.m in Sources */,
-				0E1EA19D159EE17600E8CC0E /* FBFeedPost.m in Sources */,
-				0E1EA19E159EE17600E8CC0E /* FBRequestWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
