@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Lost.h"
+#import "AppDelegate.h"
 
 @class LostDetailTVC;
 @protocol LostDetailTVCDelegate

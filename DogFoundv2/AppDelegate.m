@@ -49,27 +49,10 @@
     if (![facebook isSessionValid]) {
         NSArray *permissions = [[NSArray alloc] initWithObjects:
                                 @"publish_stream",
+                                @"manage_pages",
                                 nil];
         [facebook authorize:permissions];
     }
-    
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    
-    //Need to provide POST parameters to the Facebook SDK for the specific post type
-    NSString *graphPath = @"me/feed";
-    
-    NSString *MyURL = @"http://xmlvga.blu.livefilestore.com/y1pJdAgNYZIZhLcsq9l7tZprgP9DCr8fuxfe-NyPmE9mB2VFhCYtTXPY7lBW1hfMP7tPdCXGMTr9aWw1JMwcc6CwryfscX766co/3-31-2010%2012-05-30.png";
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:MyURL]]];
-    NSData* imageData = UIImageJPEGRepresentation(image, 90);
-	graphPath = @"me/photos";
-    [params setObject:imageData forKey:@"source"];
-    [params setObject:@"testcaption" forKey:@"message"];
-    
-    //[params setObject:@"status" forKey:@"type"];
-    //[params setObject:@"test message..." forKey:@"message"];
-    
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-    [facebook requestWithGraphPath:graphPath andParams:params andHttpMethod:@"POST" andDelegate:self];
     
     return YES;
 }

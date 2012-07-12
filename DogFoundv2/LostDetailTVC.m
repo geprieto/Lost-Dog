@@ -141,6 +141,28 @@
     
     [self.managedObjectContext save:nil];  // write to database
     
+    AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    Facebook *facebook = appDelegate.facebook;
+    
+    //[facebook setAccessToken:[facebook requestWithGraphPath:@"/339882629420548?fields=access_token" andDelegate:self]];
+    
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    
+    NSString *graphPath = @"me/photos";
+    
+    NSData* imageData = UIImageJPEGRepresentation(self.imageView.image, 90);
+    [params setObject:imageData forKey:@"source"];
+    
+    NSString *message = [NSString stringWithFormat:@"This is %@, a %@ that %@", lostNameTextField.text, lostBreedTextField.text, lostInfoTextView.text];
+    
+    
+    [params setObject:message forKey:@"message"];
+    
+    [facebook requestWithGraphPath:graphPath andParams:params andHttpMethod:@"POST" andDelegate:self];
+    
+    
+    
+    
     [self.delegate theSaveButtonOnTheLostDetailTVCWasTapped:self];
 }
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Found.h"
+#import "AppDelegate.h"
 
 @class FoundDetailTVC;
 @protocol FoundDetailTVCDelegate
