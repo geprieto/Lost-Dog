@@ -85,6 +85,10 @@
         NSLog(@"Passing selected role (%@) to FoundDetailTVC", self.selectedFound.name);
         foundDetailTVC.found = self.selectedFound;
     }
+    else if ([segue.identifier isEqualToString:@"Settings Segue"])
+    {
+        NSLog(@"Using Settings");
+    }
     else {
         NSLog(@"Unidentified Segue Attempted!");
     }

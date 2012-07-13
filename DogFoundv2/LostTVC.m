@@ -85,6 +85,10 @@
         NSLog(@"Passing selected role (%@) to LostDetailTVC", self.selectedLost.name);
         lostDetailTVC.lost = self.selectedLost;
     }
+    else if ([segue.identifier isEqualToString:@"Settings Segue"])
+    {
+        NSLog(@"Using Settings");
+    }
     else {
         NSLog(@"Unidentified Segue Attempted!");
     }

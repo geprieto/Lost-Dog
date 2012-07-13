@@ -39,6 +39,7 @@
 		0EF5E25C1568D4E000A04C8A /* FoundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E25B1568D4E000A04C8A /* FoundTVC.m */; };
 		0EF5E25F1568D4FE00A04C8A /* AddFoundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E25E1568D4FE00A04C8A /* AddFoundTVC.m */; };
 		0EF5E2621568D51B00A04C8A /* FoundDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E2611568D51B00A04C8A /* FoundDetailTVC.m */; };
+		0EF9E9B715B00D0F00C716D9 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9E9B615B00D0F00C716D9 /* SettingsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		0EF5E25E1568D4FE00A04C8A /* AddFoundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoundTVC.m; sourceTree = "<group>"; };
 		0EF5E2601568D51B00A04C8A /* FoundDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundDetailTVC.h; sourceTree = "<group>"; };
 		0EF5E2611568D51B00A04C8A /* FoundDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundDetailTVC.m; sourceTree = "<group>"; };
+		0EF9E9B515B00D0F00C716D9 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsVC.h; path = DogFoundv2/SettingsVC.h; sourceTree = "<group>"; };
+		0EF9E9B615B00D0F00C716D9 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsVC.m; path = DogFoundv2/SettingsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 			children = (
 				0EF5E2591568D49C00A04C8A /* Found */,
 				0EF5E2581568D46E00A04C8A /* Lost */,
+				0EF9E9B515B00D0F00C716D9 /* SettingsVC.h */,
+				0EF9E9B615B00D0F00C716D9 /* SettingsVC.m */,
 			);
 			name = MVC;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				0EF5E2621568D51B00A04C8A /* FoundDetailTVC.m in Sources */,
 				0E18EA34158C87E000EDB3FC /* Found.m in Sources */,
 				0E18EA37158D767D00EDB3FC /* Lost.m in Sources */,
+				0EF9E9B715B00D0F00C716D9 /* SettingsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

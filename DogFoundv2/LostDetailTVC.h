@@ -15,7 +15,7 @@
 - (void)theSaveButtonOnTheLostDetailTVCWasTapped:(LostDetailTVC *)controller;
 @end
 
-@interface LostDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface LostDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, FBSessionDelegate>
 {
     UIImageView *_imageView;
     NSString *_lostImageFileName;

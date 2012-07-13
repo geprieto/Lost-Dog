@@ -15,7 +15,7 @@
 - (void)theSaveButtonOnTheFoundDetailTVCWasTapped:(FoundDetailTVC *)controller;
 @end
 
-@interface FoundDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface FoundDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, FBSessionDelegate>
 {
     UIImageView *_imageView;
     NSString *_foundImageFileName;
