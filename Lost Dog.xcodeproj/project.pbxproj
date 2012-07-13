@@ -33,8 +33,6 @@
 		0E854A6815453F7F00A30EFC /* AddLostTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A6715453F7F00A30EFC /* AddLostTVC.m */; };
 		0E854A6F154543C300A30EFC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */; };
 		0E854A721545446B00A30EFC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A701545446B00A30EFC /* Model.xcdatamodeld */; };
-		0EB31747156A483F007D3A3F /* intro_screen_320.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB31745156A483F007D3A3F /* intro_screen_320.png */; };
-		0EB31748156A483F007D3A3F /* intro_screen_640.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB31746156A483F007D3A3F /* intro_screen_640.png */; };
 		0EB3174B156A4894007D3A3F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB3174A156A4894007D3A3F /* Default.png */; };
 		0EB3174D156A4899007D3A3F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB3174C156A4899007D3A3F /* Default@2x.png */; };
 		0EF5E25615679FF300A04C8A /* LostDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E25515679FF300A04C8A /* LostDetailTVC.m */; };
@@ -101,8 +99,6 @@
 		0E854A6D154543C300A30EFC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = DogFoundv2/CoreDataTableViewController.h; sourceTree = "<group>"; };
 		0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = DogFoundv2/CoreDataTableViewController.m; sourceTree = "<group>"; };
 		0E854A711545446B00A30EFC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		0EB31745156A483F007D3A3F /* intro_screen_320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro_screen_320.png; sourceTree = "<group>"; };
-		0EB31746156A483F007D3A3F /* intro_screen_640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intro_screen_640.png; sourceTree = "<group>"; };
 		0EB3174A156A4894007D3A3F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		0EB3174C156A4899007D3A3F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0EF5E25415679FF300A04C8A /* LostDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostDetailTVC.h; sourceTree = "<group>"; };
@@ -151,8 +147,6 @@
 				0E42B695158832C30077C0D7 /* lost_icon@2x.png */,
 				0EB3174C156A4899007D3A3F /* Default@2x.png */,
 				0EB3174A156A4894007D3A3F /* Default.png */,
-				0EB31745156A483F007D3A3F /* intro_screen_320.png */,
-				0EB31746156A483F007D3A3F /* intro_screen_640.png */,
 				0E12D9D5156A37E6000E091F /* logo_57.png */,
 				0E12D9D6156A37E6000E091F /* logo_114.png */,
 			);
@@ -357,8 +351,6 @@
 				0E854A53154535ED00A30EFC /* MainStoryboard.storyboard in Resources */,
 				0E12D9D7156A37E6000E091F /* logo_57.png in Resources */,
 				0E12D9D8156A37E6000E091F /* logo_114.png in Resources */,
-				0EB31747156A483F007D3A3F /* intro_screen_320.png in Resources */,
-				0EB31748156A483F007D3A3F /* intro_screen_640.png in Resources */,
 				0EB3174B156A4894007D3A3F /* Default.png in Resources */,
 				0EB3174D156A4899007D3A3F /* Default@2x.png in Resources */,
 				0E42B696158832C30077C0D7 /* found_icon.png in Resources */,
@@ -494,6 +486,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DogFoundv2/Lost Dog-Prefix.pch";
 				INFOPLIST_FILE = "DogFoundv2/Lost Dog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/facebook-ios-sdk\"",
@@ -509,6 +502,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DogFoundv2/Lost Dog-Prefix.pch";
 				INFOPLIST_FILE = "DogFoundv2/Lost Dog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/facebook-ios-sdk\"",

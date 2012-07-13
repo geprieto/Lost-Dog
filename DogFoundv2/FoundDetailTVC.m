@@ -93,7 +93,7 @@
     UIImage *originalImage, *editedImage, *imageToSave;
     
     // Handle a still image capture
-    if (CFStringCompare ((CFStringRef) mediaType, kUTTypeImage, 0)
+    if (CFStringCompare ((__bridge CFStringRef) mediaType, kUTTypeImage, 0)
         == kCFCompareEqualTo) {
         
         editedImage = (UIImage *) [info objectForKey:
