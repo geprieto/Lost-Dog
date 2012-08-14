@@ -1,0 +1,581 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E12D9D7156A37E6000E091F /* logo_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E12D9D5156A37E6000E091F /* logo_57.png */; };
+		0E12D9D8156A37E6000E091F /* logo_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E12D9D6156A37E6000E091F /* logo_114.png */; };
+		0E18EA2E158C6F4C00EDB3FC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E18EA2D158C6F4C00EDB3FC /* MobileCoreServices.framework */; };
+		0E18EA34158C87E000EDB3FC /* Found.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E18EA33158C87DF00EDB3FC /* Found.m */; };
+		0E18EA37158D767D00EDB3FC /* Lost.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E18EA36158D767D00EDB3FC /* Lost.m */; };
+		0E1EA1B3159EE49800E8CC0E /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */; };
+		0E1EA1B4159EE49800E8CC0E /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E1EA1AC159EE49800E8CC0E /* libfacebook_ios_sdk.a */; };
+		0E41BD7015D905430086C9EC /* logoutfb.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E41BD6E15D905430086C9EC /* logoutfb.png */; };
+		0E41BD7115D905430086C9EC /* logoutfb_esp.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E41BD6F15D905430086C9EC /* logoutfb_esp.png */; };
+		0E42B696158832C30077C0D7 /* found_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B692158832C30077C0D7 /* found_icon.png */; };
+		0E42B697158832C30077C0D7 /* found_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B693158832C30077C0D7 /* found_icon@2x.png */; };
+		0E42B698158832C30077C0D7 /* lost_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B694158832C30077C0D7 /* lost_icon.png */; };
+		0E42B699158832C30077C0D7 /* lost_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E42B695158832C30077C0D7 /* lost_icon@2x.png */; };
+		0E756A4215D3A559003DA37C /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E756A4115D3A559003DA37C /* camera.png */; };
+		0E756A4615D652D2003DA37C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E756A4815D652D2003DA37C /* Localizable.strings */; };
+		0E756A4B15D65588003DA37C /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E756A4D15D65588003DA37C /* MainStoryboard.storyboard */; };
+		0E756A5015D656AE003DA37C /* camera_esp.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E756A4F15D656AE003DA37C /* camera_esp.png */; };
+		0E7DE07515DA19B40045255D /* mainLogo57.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E7DE07315DA19B40045255D /* mainLogo57.png */; };
+		0E7DE07615DA19B40045255D /* mainLogo114.png in Resources */ = {isa = PBXBuildFile; fileRef = 0E7DE07415DA19B40045255D /* mainLogo114.png */; };
+		0E854A1C1545358700A30EFC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A1B1545358700A30EFC /* UIKit.framework */; };
+		0E854A1E1545358700A30EFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A1D1545358700A30EFC /* Foundation.framework */; };
+		0E854A201545358700A30EFC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A1F1545358700A30EFC /* CoreGraphics.framework */; };
+		0E854A261545358700A30EFC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E854A241545358700A30EFC /* InfoPlist.strings */; };
+		0E854A281545358700A30EFC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A271545358700A30EFC /* main.m */; };
+		0E854A2C1545358700A30EFC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A2B1545358700A30EFC /* AppDelegate.m */; };
+		0E854A511545359D00A30EFC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E854A501545359D00A30EFC /* CoreData.framework */; };
+		0E854A6515453F6D00A30EFC /* LostTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A6415453F6D00A30EFC /* LostTVC.m */; };
+		0E854A6815453F7F00A30EFC /* AddLostTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A6715453F7F00A30EFC /* AddLostTVC.m */; };
+		0E854A6F154543C300A30EFC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */; };
+		0E854A721545446B00A30EFC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0E854A701545446B00A30EFC /* Model.xcdatamodeld */; };
+		0EB3174B156A4894007D3A3F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB3174A156A4894007D3A3F /* Default.png */; };
+		0EB3174D156A4899007D3A3F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0EB3174C156A4899007D3A3F /* Default@2x.png */; };
+		0EF5E25615679FF300A04C8A /* LostDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E25515679FF300A04C8A /* LostDetailTVC.m */; };
+		0EF5E25C1568D4E000A04C8A /* FoundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E25B1568D4E000A04C8A /* FoundTVC.m */; };
+		0EF5E25F1568D4FE00A04C8A /* AddFoundTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E25E1568D4FE00A04C8A /* AddFoundTVC.m */; };
+		0EF5E2621568D51B00A04C8A /* FoundDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF5E2611568D51B00A04C8A /* FoundDetailTVC.m */; };
+		0EF9E9B715B00D0F00C716D9 /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF9E9B615B00D0F00C716D9 /* SettingsVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E12D9D5156A37E6000E091F /* logo_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_57.png; sourceTree = "<group>"; };
+		0E12D9D6156A37E6000E091F /* logo_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_114.png; sourceTree = "<group>"; };
+		0E18EA2D158C6F4C00EDB3FC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0E18EA32158C87DF00EDB3FC /* Found.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Found.h; path = DogFoundv2/Found.h; sourceTree = "<group>"; };
+		0E18EA33158C87DF00EDB3FC /* Found.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Found.m; path = DogFoundv2/Found.m; sourceTree = "<group>"; };
+		0E18EA35158D767C00EDB3FC /* Lost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lost.h; path = DogFoundv2/Lost.h; sourceTree = "<group>"; };
+		0E18EA36158D767D00EDB3FC /* Lost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lost.m; path = DogFoundv2/Lost.m; sourceTree = "<group>"; };
+		0E1EA1A4159EE49800E8CC0E /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		0E1EA1A5159EE49800E8CC0E /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		0E1EA1A7159EE49800E8CC0E /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		0E1EA1A8159EE49800E8CC0E /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		0E1EA1A9159EE49800E8CC0E /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		0E1EA1AA159EE49800E8CC0E /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		0E1EA1AB159EE49800E8CC0E /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		0E1EA1AC159EE49800E8CC0E /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfacebook_ios_sdk.a; sourceTree = "<group>"; };
+		0E1EA1AD159EE49800E8CC0E /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		0E1EA1AE159EE49800E8CC0E /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		0E1EA1AF159EE49800E8CC0E /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		0E1EA1B0159EE49800E8CC0E /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		0E1EA1B1159EE49800E8CC0E /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		0E1EA1B2159EE49800E8CC0E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		0E41BD6E15D905430086C9EC /* logoutfb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoutfb.png; sourceTree = "<group>"; };
+		0E41BD6F15D905430086C9EC /* logoutfb_esp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoutfb_esp.png; sourceTree = "<group>"; };
+		0E42B692158832C30077C0D7 /* found_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = found_icon.png; sourceTree = "<group>"; };
+		0E42B693158832C30077C0D7 /* found_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "found_icon@2x.png"; sourceTree = "<group>"; };
+		0E42B694158832C30077C0D7 /* lost_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lost_icon.png; sourceTree = "<group>"; };
+		0E42B695158832C30077C0D7 /* lost_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lost_icon@2x.png"; sourceTree = "<group>"; };
+		0E756A4115D3A559003DA37C /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		0E756A4715D652D2003DA37C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E756A4915D65429003DA37C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0E756A4A15D65429003DA37C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0E756A4C15D65588003DA37C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0E756A4E15D65593003DA37C /* es */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = es; path = es.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		0E756A4F15D656AE003DA37C /* camera_esp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_esp.png; sourceTree = "<group>"; };
+		0E7DE07315DA19B40045255D /* mainLogo57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainLogo57.png; sourceTree = "<group>"; };
+		0E7DE07415DA19B40045255D /* mainLogo114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainLogo114.png; sourceTree = "<group>"; };
+		0E854A171545358700A30EFC /* LostDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E854A1B1545358700A30EFC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0E854A1D1545358700A30EFC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0E854A1F1545358700A30EFC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0E854A231545358700A30EFC /* LostDog-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LostDog-Info.plist"; sourceTree = "<group>"; };
+		0E854A251545358700A30EFC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0E854A271545358700A30EFC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0E854A291545358700A30EFC /* LostDog-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LostDog-Prefix.pch"; sourceTree = "<group>"; };
+		0E854A2A1545358700A30EFC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = DogFoundv2/AppDelegate.h; sourceTree = "<group>"; };
+		0E854A2B1545358700A30EFC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = DogFoundv2/AppDelegate.m; sourceTree = "<group>"; };
+		0E854A391545358800A30EFC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0E854A501545359D00A30EFC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0E854A6315453F6D00A30EFC /* LostTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostTVC.h; sourceTree = "<group>"; };
+		0E854A6415453F6D00A30EFC /* LostTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostTVC.m; sourceTree = "<group>"; };
+		0E854A6615453F7F00A30EFC /* AddLostTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLostTVC.h; sourceTree = "<group>"; };
+		0E854A6715453F7F00A30EFC /* AddLostTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLostTVC.m; sourceTree = "<group>"; };
+		0E854A6D154543C300A30EFC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = DogFoundv2/CoreDataTableViewController.h; sourceTree = "<group>"; };
+		0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = DogFoundv2/CoreDataTableViewController.m; sourceTree = "<group>"; };
+		0E854A711545446B00A30EFC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		0EB3174A156A4894007D3A3F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		0EB3174C156A4899007D3A3F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0EF5E25415679FF300A04C8A /* LostDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LostDetailTVC.h; sourceTree = "<group>"; };
+		0EF5E25515679FF300A04C8A /* LostDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LostDetailTVC.m; sourceTree = "<group>"; };
+		0EF5E25A1568D4E000A04C8A /* FoundTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundTVC.h; sourceTree = "<group>"; };
+		0EF5E25B1568D4E000A04C8A /* FoundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundTVC.m; sourceTree = "<group>"; };
+		0EF5E25D1568D4FE00A04C8A /* AddFoundTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoundTVC.h; sourceTree = "<group>"; };
+		0EF5E25E1568D4FE00A04C8A /* AddFoundTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoundTVC.m; sourceTree = "<group>"; };
+		0EF5E2601568D51B00A04C8A /* FoundDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoundDetailTVC.h; sourceTree = "<group>"; };
+		0EF5E2611568D51B00A04C8A /* FoundDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoundDetailTVC.m; sourceTree = "<group>"; };
+		0EF9E9B515B00D0F00C716D9 /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsVC.h; path = DogFoundv2/SettingsVC.h; sourceTree = "<group>"; };
+		0EF9E9B615B00D0F00C716D9 /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsVC.m; path = DogFoundv2/SettingsVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0E854A141545358700A30EFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E18EA2E158C6F4C00EDB3FC /* MobileCoreServices.framework in Frameworks */,
+				0E854A511545359D00A30EFC /* CoreData.framework in Frameworks */,
+				0E854A1C1545358700A30EFC /* UIKit.framework in Frameworks */,
+				0E854A1E1545358700A30EFC /* Foundation.framework in Frameworks */,
+				0E854A201545358700A30EFC /* CoreGraphics.framework in Frameworks */,
+				0E1EA1B4159EE49800E8CC0E /* libfacebook_ios_sdk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E1EA197159EE13E00E8CC0E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				0E41BD6E15D905430086C9EC /* logoutfb.png */,
+				0E41BD6F15D905430086C9EC /* logoutfb_esp.png */,
+				0E756A4F15D656AE003DA37C /* camera_esp.png */,
+				0E756A4115D3A559003DA37C /* camera.png */,
+				0E42B692158832C30077C0D7 /* found_icon.png */,
+				0E42B693158832C30077C0D7 /* found_icon@2x.png */,
+				0E42B694158832C30077C0D7 /* lost_icon.png */,
+				0E42B695158832C30077C0D7 /* lost_icon@2x.png */,
+				0EB3174C156A4899007D3A3F /* Default@2x.png */,
+				0EB3174A156A4894007D3A3F /* Default.png */,
+				0E12D9D5156A37E6000E091F /* logo_57.png */,
+				0E12D9D6156A37E6000E091F /* logo_114.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		0E1EA1A0159EE1F300E8CC0E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0E854A6D154543C300A30EFC /* CoreDataTableViewController.h */,
+				0E854A6E154543C300A30EFC /* CoreDataTableViewController.m */,
+				0E18EA32158C87DF00EDB3FC /* Found.h */,
+				0E18EA33158C87DF00EDB3FC /* Found.m */,
+				0E18EA35158D767C00EDB3FC /* Lost.h */,
+				0E18EA36158D767D00EDB3FC /* Lost.m */,
+				0E854A701545446B00A30EFC /* Model.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		0E1EA1A2159EE27F00E8CC0E /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5E2591568D49C00A04C8A /* Found */,
+				0EF5E2581568D46E00A04C8A /* Lost */,
+				0EF9E9B515B00D0F00C716D9 /* SettingsVC.h */,
+				0EF9E9B615B00D0F00C716D9 /* SettingsVC.m */,
+			);
+			name = MVC;
+			sourceTree = "<group>";
+		};
+		0E1EA1A3159EE49800E8CC0E /* facebook-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				0E1EA1A4159EE49800E8CC0E /* Facebook.h */,
+				0E1EA1A5159EE49800E8CC0E /* FBConnect.h */,
+				0E1EA1A6159EE49800E8CC0E /* FBDialog.bundle */,
+				0E1EA1A7159EE49800E8CC0E /* FBDialog.h */,
+				0E1EA1A8159EE49800E8CC0E /* FBFrictionlessRequestSettings.h */,
+				0E1EA1A9159EE49800E8CC0E /* FBLoginDialog.h */,
+				0E1EA1AA159EE49800E8CC0E /* FBRequest.h */,
+				0E1EA1AB159EE49800E8CC0E /* JSON.h */,
+				0E1EA1AC159EE49800E8CC0E /* libfacebook_ios_sdk.a */,
+				0E1EA1AD159EE49800E8CC0E /* NSObject+SBJSON.h */,
+				0E1EA1AE159EE49800E8CC0E /* NSString+SBJSON.h */,
+				0E1EA1AF159EE49800E8CC0E /* SBJSON.h */,
+				0E1EA1B0159EE49800E8CC0E /* SBJsonBase.h */,
+				0E1EA1B1159EE49800E8CC0E /* SBJsonParser.h */,
+				0E1EA1B2159EE49800E8CC0E /* SBJsonWriter.h */,
+			);
+			path = "facebook-ios-sdk";
+			sourceTree = "<group>";
+		};
+		0E854A0C1545358700A30EFC = {
+			isa = PBXGroup;
+			children = (
+				0E7DE07315DA19B40045255D /* mainLogo57.png */,
+				0E7DE07415DA19B40045255D /* mainLogo114.png */,
+				0E854A2A1545358700A30EFC /* AppDelegate.h */,
+				0E854A2B1545358700A30EFC /* AppDelegate.m */,
+				0E756A4D15D65588003DA37C /* MainStoryboard.storyboard */,
+				0E1EA1A2159EE27F00E8CC0E /* MVC */,
+				0E1EA1A0159EE1F300E8CC0E /* CoreData */,
+				0E854A221545358700A30EFC /* Supporting Files */,
+				0E1EA197159EE13E00E8CC0E /* images */,
+				0E854A1A1545358700A30EFC /* Frameworks */,
+				0E854A181545358700A30EFC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0E854A181545358700A30EFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E854A171545358700A30EFC /* LostDog.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0E854A1A1545358700A30EFC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E1EA1A3159EE49800E8CC0E /* facebook-ios-sdk */,
+				0E18EA2D158C6F4C00EDB3FC /* MobileCoreServices.framework */,
+				0E854A501545359D00A30EFC /* CoreData.framework */,
+				0E854A1B1545358700A30EFC /* UIKit.framework */,
+				0E854A1D1545358700A30EFC /* Foundation.framework */,
+				0E854A1F1545358700A30EFC /* CoreGraphics.framework */,
+				0E854A391545358800A30EFC /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0E854A221545358700A30EFC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E756A4815D652D2003DA37C /* Localizable.strings */,
+				0E854A231545358700A30EFC /* LostDog-Info.plist */,
+				0E854A241545358700A30EFC /* InfoPlist.strings */,
+				0E854A271545358700A30EFC /* main.m */,
+				0E854A291545358700A30EFC /* LostDog-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = DogFoundv2;
+			sourceTree = "<group>";
+		};
+		0EF5E2581568D46E00A04C8A /* Lost */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5E25415679FF300A04C8A /* LostDetailTVC.h */,
+				0EF5E25515679FF300A04C8A /* LostDetailTVC.m */,
+				0E854A6315453F6D00A30EFC /* LostTVC.h */,
+				0E854A6415453F6D00A30EFC /* LostTVC.m */,
+				0E854A6615453F7F00A30EFC /* AddLostTVC.h */,
+				0E854A6715453F7F00A30EFC /* AddLostTVC.m */,
+			);
+			name = Lost;
+			path = DogFoundv2;
+			sourceTree = "<group>";
+		};
+		0EF5E2591568D49C00A04C8A /* Found */ = {
+			isa = PBXGroup;
+			children = (
+				0EF5E25A1568D4E000A04C8A /* FoundTVC.h */,
+				0EF5E25B1568D4E000A04C8A /* FoundTVC.m */,
+				0EF5E25D1568D4FE00A04C8A /* AddFoundTVC.h */,
+				0EF5E25E1568D4FE00A04C8A /* AddFoundTVC.m */,
+				0EF5E2601568D51B00A04C8A /* FoundDetailTVC.h */,
+				0EF5E2611568D51B00A04C8A /* FoundDetailTVC.m */,
+			);
+			name = Found;
+			path = DogFoundv2;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E854A161545358700A30EFC /* LostDog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E854A4A1545358800A30EFC /* Build configuration list for PBXNativeTarget "LostDog" */;
+			buildPhases = (
+				0E854A131545358700A30EFC /* Sources */,
+				0E854A141545358700A30EFC /* Frameworks */,
+				0E854A151545358700A30EFC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LostDog;
+			productName = DogFoundv2;
+			productReference = 0E854A171545358700A30EFC /* LostDog.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0E854A0E1545358700A30EFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Gabriel Prieto Overeem";
+			};
+			buildConfigurationList = 0E854A111545358700A30EFC /* Build configuration list for PBXProject "LostDog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				es,
+			);
+			mainGroup = 0E854A0C1545358700A30EFC;
+			productRefGroup = 0E854A181545358700A30EFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0E854A161545358700A30EFC /* LostDog */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E854A151545358700A30EFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E854A261545358700A30EFC /* InfoPlist.strings in Resources */,
+				0E756A4B15D65588003DA37C /* MainStoryboard.storyboard in Resources */,
+				0E12D9D7156A37E6000E091F /* logo_57.png in Resources */,
+				0E12D9D8156A37E6000E091F /* logo_114.png in Resources */,
+				0EB3174B156A4894007D3A3F /* Default.png in Resources */,
+				0EB3174D156A4899007D3A3F /* Default@2x.png in Resources */,
+				0E42B696158832C30077C0D7 /* found_icon.png in Resources */,
+				0E42B697158832C30077C0D7 /* found_icon@2x.png in Resources */,
+				0E42B698158832C30077C0D7 /* lost_icon.png in Resources */,
+				0E42B699158832C30077C0D7 /* lost_icon@2x.png in Resources */,
+				0E1EA1B3159EE49800E8CC0E /* FBDialog.bundle in Resources */,
+				0E756A4215D3A559003DA37C /* camera.png in Resources */,
+				0E756A4615D652D2003DA37C /* Localizable.strings in Resources */,
+				0E756A5015D656AE003DA37C /* camera_esp.png in Resources */,
+				0E41BD7015D905430086C9EC /* logoutfb.png in Resources */,
+				0E41BD7115D905430086C9EC /* logoutfb_esp.png in Resources */,
+				0E7DE07515DA19B40045255D /* mainLogo57.png in Resources */,
+				0E7DE07615DA19B40045255D /* mainLogo114.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0E854A131545358700A30EFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E854A281545358700A30EFC /* main.m in Sources */,
+				0E854A2C1545358700A30EFC /* AppDelegate.m in Sources */,
+				0E854A6515453F6D00A30EFC /* LostTVC.m in Sources */,
+				0E854A6815453F7F00A30EFC /* AddLostTVC.m in Sources */,
+				0E854A6F154543C300A30EFC /* CoreDataTableViewController.m in Sources */,
+				0E854A721545446B00A30EFC /* Model.xcdatamodeld in Sources */,
+				0EF5E25615679FF300A04C8A /* LostDetailTVC.m in Sources */,
+				0EF5E25C1568D4E000A04C8A /* FoundTVC.m in Sources */,
+				0EF5E25F1568D4FE00A04C8A /* AddFoundTVC.m in Sources */,
+				0EF5E2621568D51B00A04C8A /* FoundDetailTVC.m in Sources */,
+				0E18EA34158C87E000EDB3FC /* Found.m in Sources */,
+				0E18EA37158D767D00EDB3FC /* Lost.m in Sources */,
+				0EF9E9B715B00D0F00C716D9 /* SettingsVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0E756A4815D652D2003DA37C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E756A4715D652D2003DA37C /* en */,
+				0E756A4915D65429003DA37C /* es */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		0E756A4D15D65588003DA37C /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E756A4C15D65588003DA37C /* en */,
+				0E756A4E15D65593003DA37C /* es */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		0E854A241545358700A30EFC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0E854A251545358700A30EFC /* en */,
+				0E756A4A15D65429003DA37C /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0E7DE07715DA1BE30045255D /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Gabriel Prieto";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos5.1]" = "iPhone Distribution: Gabriel Prieto";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "3B764DA9-FFD2-48AA-902D-6263D58EE1A2";
+				"PROVISIONING_PROFILE[sdk=iphoneos5.1]" = "3B764DA9-FFD2-48AA-902D-6263D58EE1A2";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		0E7DE07815DA1BE30045255D /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogFoundv2/LostDog-Prefix.pch";
+				INFOPLIST_FILE = "DogFoundv2/LostDog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/facebook-ios-sdk\"",
+				);
+				PRODUCT_NAME = LostDog;
+				SDKROOT = iphoneos5.1;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = AppStore;
+		};
+		0E854A481545358800A30EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0E854A491545358800A30EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos5.1]" = "iPhone Distribution: Gabriel Prieto";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos5.1]" = "3B764DA9-FFD2-48AA-902D-6263D58EE1A2";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0E854A4B1545358800A30EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogFoundv2/LostDog-Prefix.pch";
+				INFOPLIST_FILE = "DogFoundv2/LostDog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/facebook-ios-sdk\"",
+				);
+				PRODUCT_NAME = LostDog;
+				SDKROOT = iphoneos5.1;
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0E854A4C1545358800A30EFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DogFoundv2/LostDog-Prefix.pch";
+				INFOPLIST_FILE = "DogFoundv2/LostDog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/facebook-ios-sdk\"",
+				);
+				PRODUCT_NAME = LostDog;
+				SDKROOT = iphoneos5.1;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0E854A111545358700A30EFC /* Build configuration list for PBXProject "LostDog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E854A481545358800A30EFC /* Debug */,
+				0E854A491545358800A30EFC /* Release */,
+				0E7DE07715DA1BE30045255D /* AppStore */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E854A4A1545358800A30EFC /* Build configuration list for PBXNativeTarget "LostDog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E854A4B1545358800A30EFC /* Debug */,
+				0E854A4C1545358800A30EFC /* Release */,
+				0E7DE07815DA1BE30045255D /* AppStore */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0E854A701545446B00A30EFC /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0E854A711545446B00A30EFC /* Model.xcdatamodel */,
+			);
+			currentVersion = 0E854A711545446B00A30EFC /* Model.xcdatamodel */;
+			name = Model.xcdatamodeld;
+			path = DogFoundv2/Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 0E854A0E1545358700A30EFC /* Project object */;
+}

@@ -1,0 +1,26 @@
+/* 
+  Localizable.strings
+  Lost Dog
+
+  Created by Gabriel Prieto on 8/11/12.
+  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
+*/
+
+//Message string for Found, to post in FB with name, breed and info
+"INTROFOUND" = "PERRO ENCONTRADO!\nNombre: ";
+"MIDDLEFOUND" = "\nRaza: ";
+"ENDFOUND" = "\nInformación de donde y cuando se encontró, otros detalles: ";
+
+//Message string for Lost, to post in FB with name, breed and info
+"INTROLOST" = "PERRO PERDIDO!\nNombre: ";
+"MIDDLELOST" = "\nRaza: ";
+"ENDLOST" = "\nInformación de donde y cuando se perdió, otros detalles: ";
+
+//Message strings for Settings
+"SETTINGSTITLE" = "Presione Home para salir";
+"SETTINGSMESSAGE" = "Cuenta desactivada. Debe salir completamente de Lost para volver a usarla. Puede salir via la barra de tareas.";
+
+// Message strings for Facebook upload
+"POSTSUCCESS" = "foto publicada exitosamente!";
+"POSTFAILURE" = "la foto no pudo ser publicada!";
+

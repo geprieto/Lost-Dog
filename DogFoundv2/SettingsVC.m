@@ -3,7 +3,7 @@
 //  Lost Dog
 //
 //  Created by Gabriel Prieto on 7/13/12.
-//  Copyright (c) 2012 geprieto. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import "SettingsVC.h"
@@ -44,7 +44,9 @@
 {
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     Facebook *facebook = appDelegate.facebook;
-    [facebook logout:self];
+    [facebook logout:appDelegate];
+    UIAlertView *anAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"SETTINGSTITLE", nil) message:NSLocalizedString(@"SETTINGSMESSAGE", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [anAlert show];
 }
 
 @end

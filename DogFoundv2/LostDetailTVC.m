@@ -1,9 +1,9 @@
 //
 //  LostDetailTVC.m
-//  DogFoundv2
+//  DogLostv2
 //
 //  Created by Gabriel Prieto Overeem on 4/23/12.
-//  Copyright (c) 2012 Carnegie Institution for Science. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import "LostDetailTVC.h"
@@ -17,30 +17,42 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize lost = _lost;
 @synthesize originalLostImageFileName;
-@synthesize lostImageFileName = _lostImageFileName;
+@synthesize lostImageFileName;
 @synthesize imageView = _imageView;
+@synthesize actView;
+@synthesize msgAlert;
 
-- (void)viewDidLoad 
+- (void)viewDidLoad
 {
     NSLog(@"Setting the value of fields in this static table to that of the passed Lost");
+    
     self.lostNameTextField.text = self.lost.name;
     self.lostBreedTextField.text = self.lost.breed;
     self.lostInfoTextView.text = self.lost.info;
     self.originalLostImageFileName = self.lost.image;
+    self.lostImageFileName = self.originalLostImageFileName;
+    
+    NSLog(@"Setting specialized keyboard functions");
+    
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [tgr setCancelsTouchesInView:NO];
     [self.tableView addGestureRecognizer:tgr];
+    
+    NSLog(@"Setting image from Core Data: %@", originalLostImageFileName);
+    
     UIImage *image = [UIImage imageWithContentsOfFile:originalLostImageFileName];
     self.imageView.image = image;
+    
     [super viewDidLoad];
 }
 
 - (void)viewDidUnload
 {
+    NSLog(@"Unloading view");
+    
     [self setLostNameTextField:nil];
     [self setLostBreedTextField:nil];
     [self setLostInfoTextView:nil];
-    [self setLostImageFileName:nil];
     [self setImageView:nil];
     [super viewDidUnload];
 }
@@ -114,9 +126,10 @@
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         if ([fileMgr removeItemAtPath:self.lost.image error:&error] != YES)
             NSLog(@"Unable to delete file: %@", [error localizedDescription]);
+        else
+            NSLog(@"Deleting file %@", self.lost.image);
         
         
-        // Save the new image (original or edited) to the Camera Roll
         CFUUIDRef uuid = CFUUIDCreate(NULL);
         CFStringRef uuidString = CFUUIDCreateString(NULL, uuid);
         CFRelease(uuid);
@@ -124,11 +137,25 @@
         NSString *uniqueFileName = [NSString stringWithFormat:@"%@%@.png", prefixString, (__bridge NSString *)uuidString];
         CFRelease(uuidString);
         self.lostImageFileName = [NSHomeDirectory() stringByAppendingPathComponent:uniqueFileName];
-        [UIImagePNGRepresentation(imageToSave) writeToFile:self.lostImageFileName atomically:YES];
+        if ([UIImagePNGRepresentation(imageToSave) writeToFile:self.lostImageFileName atomically:YES] != YES)
+            NSLog(@"Unable to save file");
+        else
+            NSLog(@"Saving file %@", self.lostImageFileName);
     }
     
     [self dismissModalViewControllerAnimated: YES];
 }
+
+
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+- (void)dismissKeyboard {
+    [self.view endEditing:TRUE];
+}
+
 
 - (IBAction)save:(id)sender
 {
@@ -139,12 +166,12 @@
     [self.lost setInfo:lostInfoTextView.text];
     [self.lost setImage:self.lostImageFileName];
     
+    NSLog(@"saving to database: image --> : %@", self.lostImageFileName);
+    
     [self.managedObjectContext save:nil];  // write to database
     
     AppDelegate* appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     Facebook *facebook = appDelegate.facebook;
-    
-    //[facebook setAccessToken:[facebook requestWithGraphPath:@"/339882629420548?fields=access_token" andDelegate:self]];
     
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     
@@ -153,12 +180,16 @@
     NSData* imageData = UIImageJPEGRepresentation(self.imageView.image, 90);
     [params setObject:imageData forKey:@"source"];
     
-    NSString *message = [NSString stringWithFormat:@"This is %@, a %@ that %@", lostNameTextField.text, lostBreedTextField.text, lostInfoTextView.text];
+    NSString *intro = NSLocalizedString(@"INTROLOST", nil);
+    NSString *middle = NSLocalizedString(@"MIDDLELOST", nil);
+    NSString *end = NSLocalizedString(@"ENDLOST", nil);
+    NSString *message = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@", intro, lostNameTextField.text, middle, lostBreedTextField.text, end, lostInfoTextView.text];
     
     
     [params setObject:message forKey:@"message"];
     
-    [facebook requestWithGraphPath:graphPath andParams:params andHttpMethod:@"POST" andDelegate:self];
+    
+    [facebook requestWithGraphPath:graphPath andParams:params andHttpMethod:@"POST" andDelegate:appDelegate];
     
     
     
@@ -166,13 +197,5 @@
     [self.delegate theSaveButtonOnTheLostDetailTVCWasTapped:self];
 }
 
--(IBAction)textFieldReturn:(id)sender
-{
-    [sender resignFirstResponder];
-}
-
-- (void)dismissKeyboard {
-    [self.view endEditing:TRUE];
-}
 
 @end

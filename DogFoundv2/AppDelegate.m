@@ -3,7 +3,7 @@
 //  DogFoundv2
 //
 //  Created by Gabriel Prieto Overeem on 4/23/12.
-//  Copyright (c) 2012 Carnegie Institution for Science. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -37,7 +37,7 @@
     
     //NOTE: Be very careful to change these indexes if you change the tab order
     
-    facebook = [[Facebook alloc] initWithAppId:@"145544612236231" andDelegate:self];
+    facebook = [[Facebook alloc] initWithAppId:@"380682688652367" andDelegate:self];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"FBAccessTokenKey"] 
@@ -232,5 +232,35 @@
         [defaults synchronize];
     }
 }
+
+- (void)fbDidNotLogin:(BOOL)cancelled {
+    NSLog(@"Facebook did not login!");
+}
+
+- (void)fbDidExtendToken:(NSString*)accessToken
+               expiresAt:(NSDate*)expiresAt {
+    NSLog(@"Token extended: %@", accessToken);
+}
+
+- (void)fbSessionInvalidated {
+    NSLog(@"Facebook session invalidated!");
+}
+
+-(void)request:(FBRequest *)request didReceiveResponse:(NSURLResponse *)response {
+    // Keep this just for testing purposes.
+    NSLog(@"received response");
+    UIAlertView *uploadAlert = [[UIAlertView alloc] initWithTitle:@"Facebook" message:NSLocalizedString(@"POSTSUCCESS", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [uploadAlert show];
+}
+
+
+-(void)request:(FBRequest *)request didFailWithError:(NSError *)error{
+    NSLog(@"%@", [error localizedDescription]);
+    UIAlertView *uploadAlert = [[UIAlertView alloc] initWithTitle:@"Facebook" message:NSLocalizedString(@"POSTFAILURE", nil) delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [uploadAlert show];
+    
+}
+
+
 
 @end

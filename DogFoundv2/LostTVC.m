@@ -3,7 +3,7 @@
 //  DogFoundv2
 //
 //  Created by Gabriel Prieto Overeem on 4/23/12.
-//  Copyright (c) 2012 Carnegie Institution for Science. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import "LostTVC.h"

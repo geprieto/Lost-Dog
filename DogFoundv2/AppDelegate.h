@@ -3,13 +3,13 @@
 //  DogFoundv2
 //
 //  Created by Gabriel Prieto Overeem on 4/23/12.
-//  Copyright (c) 2012 Carnegie Institution for Science. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate>{
+@interface AppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate, FBRequestDelegate>{
     Facebook *facebook;
 }
 
@@ -23,5 +23,6 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
 
 @end

@@ -3,7 +3,7 @@
 //  DogFoundv2
 //
 //  Created by Gabriel Prieto Overeem on 4/23/12.
-//  Copyright (c) 2012 Carnegie Institution for Science. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,10 +15,9 @@
 - (void)theSaveButtonOnTheLostDetailTVCWasTapped:(LostDetailTVC *)controller;
 @end
 
-@interface LostDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, FBSessionDelegate>
+@interface LostDetailTVC : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     UIImageView *_imageView;
-    NSString *_lostImageFileName;
 }
 
 @property (nonatomic, weak) id <LostDetailTVCDelegate> delegate;
@@ -30,6 +29,8 @@
 @property (nonatomic, retain) NSString *lostImageFileName;
 @property (weak, nonatomic) NSString *originalLostImageFileName;
 @property (nonatomic, retain) IBOutlet UIImageView *imageView;
+@property (retain, nonatomic) UIActivityIndicatorView *actView;
+@property (retain, nonatomic) UIAlertView *msgAlert;
 
 - (IBAction)save:(id)sender;
 - (IBAction)textFieldReturn:(id)sender;

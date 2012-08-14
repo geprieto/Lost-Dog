@@ -3,7 +3,7 @@
 //  DogFoundv2
 //
 //  Created by Gabriel Prieto Overeem on 4/23/12.
-//  Copyright (c) 2012 Carnegie Institution for Science. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import "FoundDetailTVC.h"
@@ -17,30 +17,42 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize found = _found;
 @synthesize originalFoundImageFileName;
-@synthesize foundImageFileName = _foundImageFileName;
+@synthesize foundImageFileName;
 @synthesize imageView = _imageView;
+@synthesize actView;
+@synthesize msgAlert;
 
-- (void)viewDidLoad 
+- (void)viewDidLoad
 {
     NSLog(@"Setting the value of fields in this static table to that of the passed Found");
+    
     self.foundNameTextField.text = self.found.name;
     self.foundBreedTextField.text = self.found.breed;
     self.foundInfoTextView.text = self.found.info;
     self.originalFoundImageFileName = self.found.image;
+    self.foundImageFileName = self.originalFoundImageFileName;
+    
+    NSLog(@"Setting specialized keyboard functions");
+    
     UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [tgr setCancelsTouchesInView:NO];
     [self.tableView addGestureRecognizer:tgr];
+    
+    NSLog(@"Setting image from Core Data: %@", originalFoundImageFileName);
+    
     UIImage *image = [UIImage imageWithContentsOfFile:originalFoundImageFileName];
     self.imageView.image = image;
+    
     [super viewDidLoad];
 }
 
 - (void)viewDidUnload
 {
+    NSLog(@"Unloading view");
+    
     [self setFoundNameTextField:nil];
     [self setFoundBreedTextField:nil];
     [self setFoundInfoTextView:nil];
-    [self setFoundImageFileName:nil];
     [self setImageView:nil];
     [super viewDidUnload];
 }
@@ -114,9 +126,10 @@
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         if ([fileMgr removeItemAtPath:self.found.image error:&error] != YES)
             NSLog(@"Unable to delete file: %@", [error localizedDescription]);
+        else
+            NSLog(@"Deleting file %@", self.found.image);
         
         
-        // Save the new image (original or edited) to the Camera Roll
         CFUUIDRef uuid = CFUUIDCreate(NULL);
         CFStringRef uuidString = CFUUIDCreateString(NULL, uuid);
         CFRelease(uuid);
@@ -124,11 +137,25 @@
         NSString *uniqueFileName = [NSString stringWithFormat:@"%@%@.png", prefixString, (__bridge NSString *)uuidString];
         CFRelease(uuidString);
         self.foundImageFileName = [NSHomeDirectory() stringByAppendingPathComponent:uniqueFileName];
-        [UIImagePNGRepresentation(imageToSave) writeToFile:self.foundImageFileName atomically:YES];
+        if ([UIImagePNGRepresentation(imageToSave) writeToFile:self.foundImageFileName atomically:YES] != YES)
+            NSLog(@"Unable to save file");
+        else
+            NSLog(@"Saving file %@", self.foundImageFileName);
     }
     
     [self dismissModalViewControllerAnimated: YES];
 }
+
+
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
+
+- (void)dismissKeyboard {
+    [self.view endEditing:TRUE];
+}
+
 
 - (IBAction)save:(id)sender
 {
@@ -138,6 +165,8 @@
     [self.found setBreed:foundBreedTextField.text];
     [self.found setInfo:foundInfoTextView.text];
     [self.found setImage:self.foundImageFileName];
+    
+    NSLog(@"saving to database: image --> : %@", self.foundImageFileName);
     
     [self.managedObjectContext save:nil];  // write to database
     
@@ -151,23 +180,22 @@
     NSData* imageData = UIImageJPEGRepresentation(self.imageView.image, 90);
     [params setObject:imageData forKey:@"source"];
     
-    NSString *message = [NSString stringWithFormat:@"This is %@ a %@ that %@", foundNameTextField.text, foundBreedTextField.text, foundInfoTextView.text];
+    NSString *intro = NSLocalizedString(@"INTROFOUND", nil);
+    NSString *middle = NSLocalizedString(@"MIDDLEFOUND", nil);
+    NSString *end = NSLocalizedString(@"ENDFOUND", nil);
+    NSString *message = [NSString stringWithFormat:@"%@ %@ %@ %@ %@ %@", intro, foundNameTextField.text, middle, foundBreedTextField.text, end, foundInfoTextView.text];
     
     
     [params setObject:message forKey:@"message"];
     
-    [facebook requestWithGraphPath:graphPath andParams:params andHttpMethod:@"POST" andDelegate:self];
+    
+    [facebook requestWithGraphPath:graphPath andParams:params andHttpMethod:@"POST" andDelegate:appDelegate];
+    
+    
+    
     
     [self.delegate theSaveButtonOnTheFoundDetailTVCWasTapped:self];
 }
 
--(IBAction)textFieldReturn:(id)sender
-{
-    [sender resignFirstResponder];
-}
-
-- (void)dismissKeyboard {
-    [self.view endEditing:TRUE];
-}
 
 @end

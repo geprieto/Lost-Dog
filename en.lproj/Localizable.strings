@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Lost Dog
+
+  Created by Gabriel Prieto on 8/11/12.
+  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
+*/
+
+//Message string for Found, to post in FB with name, breed and info
+"INTROFOUND" = "DOG FOUND!\nName: ";
+"MIDDLEFOUND" = "\nBreed: ";
+"ENDFOUND" = "\nInformation on when & where was found, other details: ";
+
+//Message string for Lost, to post in FB with name, breed and info
+"INTROLOST" = "LOST DOG!\nName: ";
+"MIDDLELOST" = "\nBreed: ";
+"ENDLOST" = "\nInformation on when & where was lost, other details: ";
+
+//Message strings for Settings
+"SETTINGSTITLE" = "Hit Home Button to Exit";
+"SETTINGSMESSAGE" = "You are now logged out. However you must quit Lost completely if you want to use it again. Do so from the taskbar...";
+
+// Message strings for Facebook upload
+"POSTSUCCESS" = "photo uploaded successfully!";
+"POSTFAILURE" = "upload failed!";

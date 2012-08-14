@@ -3,7 +3,7 @@
 //  Lost Dog
 //
 //  Created by Gabriel Prieto on 6/16/12.
-//  Copyright (c) 2012 geprieto. All rights reserved.
+//  Copyright (c) 2012 Gabriel Prieto Overeem. All rights reserved.
 //
 
 #import "Found.h"
